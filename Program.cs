@@ -17,7 +17,11 @@ int a = InPut("Введите число A: ");
 int b = InPut("Введите число B: ");
 int res = 1;
 
-for (int i = 0; i < b; i++)
-    res = res*a;
+void up ()
+{
+    for (int i = 0; i < b; i++)
+        res = res*a;
 
 System.Console.WriteLine(res);
+}
+up();
