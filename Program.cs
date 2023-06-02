@@ -1,27 +1,41 @@
-﻿// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B. Math.Pow юзать нельзя.
-
-// 3, 5 -> 243 (3⁵)
-
-// 2, 4 -> 16
-
-
-
-int InPut(string mes)
+﻿// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// 452 -> 11
+// 82 -> 10
+// 9012 -> 12
+int count = 0;
+int result = 0;
+int InPut()
 {
-    System.Console.WriteLine(mes);
+    System.Console.WriteLine("Введите число: ");
     return int.Parse(Console.ReadLine());
-    
 }
-
-int a = InPut("Введите число A: ");
-int b = InPut("Введите число B: ");
-int res = 1;
-
-void up ()
+int num = InPut();
+void fis(int bar)
 {
-    for (int i = 0; i < b; i++)
-        res = res*a;
-
-System.Console.WriteLine(res);
+    while (bar > 0)
+    {
+        bar = bar / 10;
+        count++;
+    }
 }
-up();
+void Fronti(int[] func, int bar)
+{
+    for (int i = 0; i < count; i++) if (i == 0) func[i] = bar % 10;
+        else
+        {
+            bar = bar / 10;
+            func[i] = bar % 10;
+        }
+}
+fis(num);
+int [] massiv = new int [count];
+Fronti(massiv, num);
+
+void print()
+{
+for(int i = 0; i < count; i++)
+    result += massiv[i];
+
+System.Console.WriteLine(result);
+}
+print();
