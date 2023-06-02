@@ -1,27 +1,23 @@
-﻿// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B. Math.Pow юзать нельзя.
+﻿// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 
-// 3, 5 -> 243 (3⁵)
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 
-// 2, 4 -> 16
+// 6, 1, 33 -> [6, 1, 33]
 
+int [] array = new int [8];
 
+for (int i = 0; i < 8; i++)
+    if (i == 0) 
+    {
+        System.Console.WriteLine("Введите первое число массива: ");
+        array[i] = int.Parse(Console.ReadLine());
+    }
+    else
+    {
+        System.Console.WriteLine("Введите следующее число массива: ");
+        array[i] = int.Parse(Console.ReadLine());
+    }
+   
 
-int InPut(string mes)
-{
-    System.Console.WriteLine(mes);
-    return int.Parse(Console.ReadLine());
-    
-}
-
-int a = InPut("Введите число A: ");
-int b = InPut("Введите число B: ");
-int res = 1;
-
-void up ()
-{
-    for (int i = 0; i < b; i++)
-        res = res*a;
-
-System.Console.WriteLine(res);
-}
-up();
+for (int i = 0; i < 8; i++)
+    System.Console.Write(array[i] + " ");
