@@ -7,42 +7,22 @@
 
 System.Console.WriteLine("Введите число: ");
 double num = double.Parse(Console.ReadLine());
-int count = 1;
+int count = 0;
 int count2 = 1;
-// while (res1 * 10 % 10 != 0)
-// {   
-//     res1 = res1* 10;
-//     count++;
-// }
-
-while (num * Math.Pow(10, 1 + count) % 10 != 0) { count++; };
+while (num * up(10, 1 + count) % 10 != 0) { count++; };
+while (num / up(10, count2) > 1) { count2++;}
+int result = count + count2;
 
 
+int up (int a, int b)
+{
+    int res = 1;
+    for (int i = 0; i < b; i++)
+        res = res*a;
 
+return res;
+}
 
-// int MyPow(int a,int n)
-// {
-//    result = 1;
-//    for(int i = 0;i < n; i++)
-//       result *= a;
-//    return result;
-// }
-// while (d * Math.Pow(10, 1 + i) % 10 != 0) { i++; }
-// while (num%10 > 10)
-// {
-//     num %= 10;
-//     count2++;
-// }
-
-// while (num >0)
-// {
-//     num = num/10;
-//     count2++;
-// }
-
-
-
-System.Console.WriteLine(count);
-System.Console.WriteLine(res1);
-// System.Console.WriteLine(count2);
-// System.Console.WriteLine(num);
+System.Console.WriteLine($"Цифр после запятой: {count}");
+System.Console.WriteLine($"Цифр до запятой: {count2}");
+System.Console.WriteLine(result);
